@@ -1,21 +1,9 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
+apiVersion: operator.ibm.com/v1alpha1
+kind: IBMLicensing
 metadata:
-  name: ibm-licensing
-  namespace: openshift-gitops
+  name: instance
+  namespace: ibm-licensing
 spec:
-  project: default
+  imagePullSecrets:
+    - ibm-entitlement-key
 
-  source:
-    repoURL: https://github.com/luigimolinaro/argocd-cp4d.git
-    targetRevision: main
-    path: ibm-licensing
-
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: ibm-licensing
-
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
