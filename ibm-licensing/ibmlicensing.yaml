@@ -1,0 +1,9 @@
+apiVersion: operator.ibm.com/v1alpha1
+kind: IBMLicensing
+metadata:
+  name: instance
+  namespace: ibm-licensing
+spec:
+  imagePullSecrets:
+    - name: ibm-entitlement-key
+
