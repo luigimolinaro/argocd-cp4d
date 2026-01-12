@@ -5,4 +5,4 @@ metadata:
   namespace: ibm-licensing
 spec:
   imagePullSecrets:
-    - name: ibm-entitlement-key
+    - ibm-entitlement-key
